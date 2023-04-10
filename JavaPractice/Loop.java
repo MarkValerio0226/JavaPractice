@@ -1,3 +1,4 @@
+package JavaPractice;
 import java.util.Scanner;
 
 
