@@ -1,0 +1,58 @@
+//Main Class
+
+package oop;
+
+import java.util.Scanner;
+
+public class Oop {
+
+  
+    public static void main(String[] args) {
+        //Declare the value of Data type if If String use "", if Int (None) if Float use 'f' if, If Character use '';
+        // This is Object Methods | Object Oriented Programming.
+        Student s = new Student("Markfrancis","Valerio","2023","BSIT","DS12",92.5f,93.75f);
+        Student s1 = new Student("Markfrancis","Valerio","2023","BSIT","DS12",70.5f,73.75f);
+       s1.evaluategrade();
+       
+    }
+    
+}
+//CLASS / STUDENT CLASS (NOMAIN)
+package oop;
+
+
+public class Student {
+    String firstname, lastname,year, course, section;
+    float midtermgrade, finalgrade;
+    //ATTRIBUTES ^^^^
+    //CONSTRUCTORS Itong nasa baba/below
+   Student(String firstname, String lastname, String year, String course, String section, float midtermgrade, float finalgrade){
+       this.firstname = firstname;
+       this.lastname = lastname;
+       this.year = year;
+       this.course = course;
+       this.section = section;
+       this.midtermgrade = midtermgrade;
+       this.finalgrade = finalgrade;
+   }
+   void introduceself(){
+       //Inside this Void pwede mag gamit ng any methods as long as tama.
+       System.out.println("Name: " + firstname + lastname);
+       System.out.println("Year: "+year + "\tCourse: "+course + "\tSection: "+section);
+   }
+   void evaluategrade(){
+   float average = (midtermgrade + finalgrade) / 2;
+   System.out.println("Full Name: "+firstname + "" + lastname);
+   System.out.println("Average: "+average);
+    String remark = "";
+   if(average > 100 ) remark = "Invalid Grade";
+   else if(average >= 98) remark = "With Highest Honors";
+   else if(average >= 95) remark = "With High Honors";
+   else if(average >= 90) remark = "With Honors";
+   else if(average >= 75) remark = "Passed";
+   else remark = "Failed";
+   
+   System.out.println("Remarks : " +remark);
+       }
+   }
+   
