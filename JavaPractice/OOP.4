@@ -1,0 +1,54 @@
+//MAIN
+
+package oop;
+
+import java.util.Scanner;
+
+public class Oop {
+
+  
+    public static void main(String[] args) {
+        
+        Character c = new Character("Valerio","SUPER HELLO THERE",100,50,5);
+        Character c1 = new Character("Cernias","HI THERE",300,90,34);
+        c.sayDialog();
+        c1.introduce();
+        c1.talkTo("PongPong Valerio");
+        c.TalkingTo(c1);
+    }
+    
+}
+
+//Character
+package oop;
+
+
+public class Character {
+    String name, dialog;
+    int hp, mp, lvl;
+    
+    Character(String name, String dialog, int hp, int mp, int lvl){
+        this.name = name;
+        this.dialog = dialog;
+        this.hp = hp;
+        this.mp = mp;
+        this.lvl =lvl;
+        
+        
+    
+    }
+    void introduce(){
+    System.out.println("I'am " + name + "\tHP: " + hp);
+    
+    }
+    void sayDialog(){
+    System.out.println(name + " : " + dialog);
+    }
+    void talkTo(String firstname){
+    System.out.println(name + ": Hi " + firstname);
+    }
+    void TalkingTo(Character x ){
+        System.out.println(name + ": Hello, " + x.name);
+    }
+}
+
