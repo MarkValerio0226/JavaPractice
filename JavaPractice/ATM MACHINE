@@ -1,0 +1,96 @@
+
+package atmmachine;
+
+import java.util.Scanner;
+
+public class Atmmachine {
+
+    
+    public static void main(String[] args) {
+     Scanner sc = new Scanner(System.in);
+       double balance = 5000, withdraw, deposit;
+       double balanceone;
+       while(true){
+       System.out.println("Welcome to ATM MACHINE!");
+       System.out.print("Enter your Pin Code: ");
+       String pin = sc.nextLine();
+       if(pin.equals("0123")){
+           System.out.println("Welcome to your BDO ACCOUNT");
+           System.out.println("What would you like to do?");
+           System.out.println("1. Withdraw Money");
+           System.out.println("2. Deposit Money");
+           System.out.println("3. Balance Inquiry");
+           System.out.println("4. EXIT");
+           
+           int choice = sc.nextInt();
+           
+           switch(choice){
+               case 1:
+                   System.out.print("Enter the amout of Money you want to Withdraw");
+                   withdraw = sc.nextDouble();
+                   if(withdraw<=balance){
+                       balance = balance - withdraw;
+                   System.out.println("Please Claim your Money");
+                   System.out.println("--------------------");
+                   System.out.print("You Want to Print the Receipt?: (1)YES, (2)NO ");
+                   int print = sc.nextInt();
+                   switch(print){
+                       case 1:
+                      
+                           System.out.println("Printing the Receipt!");
+                           System.out.println("ATM MACHINE JAVA");
+                           System.out.println("Money Balance: "+balance);
+                           System.out.println("Withdraw Amount: "+withdraw);
+                         break;
+                       case 2:
+                           System.out.println("Thankyou and Have a Nice Day!");
+                          
+                   }
+                   }else{
+                   System.out.println("Insufficient Money");
+                   }
+                   System.out.println("");
+                       break;
+                     
+               case 2:
+                   System.out.println("Enter the amount of Money you want to Deposit");
+                   deposit = sc.nextDouble();
+                   balance = balance + deposit;
+                   System.out.println("You successfully Deposit your Money in your account!");
+                   System.out.println("You want to print your receipt? (1)YES, (2)NO");
+                   int yn = sc.nextInt();
+                   switch(yn){
+                       case 1:
+                           System.out.println("Printing your Receipt Please Wait");
+                           System.out.println("Current Balance: " +balance);
+                           System.out.println("Money Deposit: "+ deposit);
+                           break;
+                       case 2:
+                           System.out.println("Thank you and Come Again!");
+                           break;
+                           
+                   }
+               case 3: 
+                   System.out.println("Welcome to your Balance Inquiry");
+                   System.out.println("Balance Money is: "+balance);
+                   break;
+               case 4:
+                   System.out.print("Thankyou for using THE ATM MACHINE!");
+                   System.exit(0);
+                   break;
+               default:
+                   System.out.println("Invalid Choice Please choose 1, 2 ,3 ,4");
+                   break;
+                   
+           }
+              
+           
+        }
+        else{
+        System.out.println("Invalid Pin Code");
+        System.out.println("-----------------------------");
+        } 
+    }
+ 
+}
+}
