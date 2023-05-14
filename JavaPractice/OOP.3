@@ -1,0 +1,46 @@
+//Main
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package oop;
+
+import java.util.Scanner;
+
+public class Oop {
+
+  
+    public static void main(String[] args) {
+        
+        Scanner s = new Scanner (System.in);
+        System.out.print("Name: ");
+        String name = s.nextLine();
+        
+        System.out.print("Price: ");
+        float price = s.nextFloat();
+        
+    Products p = new Products(name,price);
+    
+    }
+    
+}
+//Product Code
+
+package oop;
+
+
+public class Products {
+        
+        String name;
+        float price;
+    
+    
+       Products(String name, float price){
+           
+           this.name = name;
+           this.price = price;
+          
+           System.out.println(name + "Created" );
+           System.out.println("PHP. " + price );
+       }
+}
