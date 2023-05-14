@@ -1,0 +1,61 @@
+// Main
+package oop;
+
+
+public class Oop {
+
+  
+    public static void main(String[] args) {
+        
+    Products p = new Products("Shake",150.5f);
+     Products p2 = new Products("Avocado",25.25f);
+      Products p3 = new Products("Mango",30.05f);
+    
+       Person p4 = new Person("Mark","Valerio",'M',19);
+       
+       System.out.println(p4.lastname);
+       System.out.println(p4.firstname);
+    }
+    
+}
+// Person
+
+package oop;
+
+
+public class Person {
+    //Attributes
+    
+    String firstname;
+    String lastname;
+    char sex;
+    int age;
+    
+    Person(String firstname, String lastname, char sex, int age){
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.sex = sex;
+        this.age = age;
+    }
+    
+}
+//Products
+
+package oop;
+
+
+public class Products {
+        
+        String name;
+        float price;
+    
+    
+       Products(String name, float price){
+           
+           this.name = name;
+           this.price = price;
+          
+           System.out.println(name + "Created" + price );
+       }
+}
+
