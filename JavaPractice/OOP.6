@@ -1,0 +1,61 @@
+//Main TITLE"Overloading Constructors"
+package oop;
+
+import java.util.Scanner;
+
+public class Oop {
+
+  
+    public static void main(String[] args) {
+       //Employee
+       Employee e = new Employee("Mark Francis", "Valerio", "WED-DEV", "Tondo", "Male", 21);
+       //Overload Constructor at bottom.
+       Employee emp = new Employee("Pong Franz", "Valerio", "Gamer");
+       //Overload na Walang Constructor and Arguments 
+       Employee e2 = new Employee();
+       
+       System.out.println(e2.firstName);
+       
+    }
+    
+}
+// Employee *Applying the Overloading Constructiors*
+
+package oop;
+
+
+public class Employee {
+    //private 
+    String firstName, lastName;
+    //private 
+    String title, address, sex;
+    //private 
+    int age;
+        //Overload Constructor
+    Employee(){
+    //Constructor na walang laman!!
+    this.firstName = "N/A";
+    this.lastName = "N/A";
+    this.title = "N/A";
+    address = "N/A";
+    sex = "N/A";
+    age = 0;
+    }
+    Employee(String firstName, String lastName, String Title){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.title = title;
+    address = "N/A";
+    sex = "N/A";
+    age = 0;
+    }
+    Employee(String firstName, String lastName, String title, String address, String sex, int age){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.title = title;
+    this.address = address;
+    this.sex = sex;
+    this.age = age;
+    }
+}
+
