@@ -1,0 +1,97 @@
+//TITLE INHERITANCE
+//MAIN CLASS
+package Inheritance;
+
+
+public class Main {
+
+ //This Program is all about Inheritance || Superclass and SubClass.
+    //Note!!
+    //Inheritance meaning 2 or more class will in inherit the other class.
+    public static void main(String[] args) {
+       Person p = new Person("Mark","Male",19);
+       Toddler t = new Toddler("Valerio","Female", 20,"Dota");
+       Kid k = new Kid ("Francis","Male",17,"Basketball",4);
+       
+       k.gradelevel();
+       k.drink();
+       //p.checkStatus();
+       t.checkStatus();
+     
+       t.drink();
+    }
+    
+}
+//Note: Mas marami kaya gawin ang Subclass kesa kay Super Class.
+
+//SUPERCLASS
+package Inheritance;
+
+//This is Object of Inheritance
+public class Person {
+    //Attirubutes
+    String name, sex;
+    int age;
+    
+    
+    //This Constructor called explisit cus walang argument sa loob ng parentesis
+    //Persons(){
+    //}
+    
+    
+    //This is called Constructor, inside the parentesis called inplisit
+    Person(String name, String sex, int age){
+    this.name = name;
+    this.sex = sex;
+    this.age = age;
+    }
+    
+    
+    
+    //Make an Object Method/Function!!
+    
+    void checkStatus(){
+    System.out.println("Name: " +name );
+    System.out.println("Sex:  " +sex);
+    System.out.println("Age: "+age);
+    }
+}
+//SUBCLASS
+
+package Inheritance;
+
+// Inheritance: Use the term Extends and File name to Inherit the Code of class.
+//Note! pwede gumamit ng Object Function Dito sa extends.
+public class Toddler extends Person {
+   
+    String favoriteGame;
+    //Overiding Constructors!!
+    Toddler(String name, String sex, int age, String favoriteGame){
+        //This Called Super Constructor
+    super(name,sex,age);
+    this.favoriteGame = favoriteGame;
+    }
+    
+    void drink(){
+    System.out.println("Drink Milk");
+    }
+    void checkStatus(){
+    System.out.println("Favorite Game: "+favoriteGame);
+    super.checkStatus();
+    }
+}
+//SUBCLASS
+package Inheritance;
+
+public class Kid extends Toddler {
+    
+    //MAKE A CONSTRUCTOR PARA HINDI MAG ERROR
+    int gradelevel;
+    Kid(String name, String sex, int age, String favoriteGame, int gradelevel){
+    super(name,sex,age,favoriteGame);
+    this.gradelevel = gradelevel;
+    }
+    void gradelevel(){
+    System.out.println("I am Grade "+gradelevel);
+    }
+}
